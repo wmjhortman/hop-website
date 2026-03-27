@@ -1,0 +1,80 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/listen", label: "Listen" },
+  { href: "/read", label: "Read" },
+  { href: "/books", label: "Books" },
+  { href: "/framework", label: "The Framework" },
+];
+---
+
+<header class="border-b border-border">
+  <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-heading text-xl font-medium text-text-primary hover:text-accent transition-colors">
+      Human on Purpose
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-8">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class:list={[
+              "text-sm tracking-wide transition-colors",
+              currentPath === link.href || currentPath === link.href + "/"
+                ? "text-accent font-medium"
+                : "text-text-secondary hover:text-text-primary",
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-text-secondary hover:text-text-primary"
+      aria-label="Open menu"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border">
+    <ul class="px-6 py-4 space-y-4">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class:list={[
+              "block text-base transition-colors",
+              currentPath === link.href || currentPath === link.href + "/"
+                ? "text-accent font-medium"
+                : "text-text-secondary hover:text-text-primary",
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PropertyCard from "../components/PropertyCard.astro";
+---
+
+<BaseLayout title="Home">
+
+  <!-- Hero -->
+  <section class="max-w-3xl mx-auto px-6 pt-20 pb-16 text-center">
+    <h1 class="text-4xl md:text-5xl font-heading font-medium leading-tight mb-6">
+      Be fully human.<br />On purpose.
+    </h1>
+    <p class="text-lg text-text-secondary leading-relaxed max-w-xl mx-auto">
+      Thoughtful essays, honest conversations, and a framework for living with meaning.
+    </p>
+  </section>
+
+  <!-- What HOP Is -->
+  <section class="max-w-3xl mx-auto px-6 pb-16">
+    <div class="bg-accent-light/40 rounded-lg p-8 text-center">
+      <p class="text-text-secondary text-sm uppercase tracking-widest mb-3">The idea</p>
+      <p class="font-heading text-xl md:text-2xl leading-relaxed">
+        Most people haven't examined what they believe - or why it matters.
+        Human on Purpose exists to help with that. Meaning isn't found. It's built,
+        one honest question at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Properties -->
+  <section class="max-w-4xl mx-auto px-6 pb-20">
+    <h2 class="font-heading text-2xl font-medium text-center mb-10">Find your way in</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      <PropertyCard
+        title="Essays"
+        description="Weekly long-form thinking on meaning, worldview, faith, and what it takes to live coherently. Published on Substack."
+        href="https://humanonpurposeproject.substack.com"
+        linkText="Read on Substack"
+        external
+      />
+      <PropertyCard
+        title="Deep Fake Conversations"
+        description="We sit down with history's most interesting thinkers - brought to life with AI voices - for real conversations about the ideas that shaped the world."
+        href="/listen"
+        linkText="Listen"
+      />
+      <PropertyCard
+        title="Bible 101"
+        description="The entire Bible in a year. One chapter a day, 8-12 minutes each. Context, meaning, and why it still matters - without the seminary jargon."
+        href="/listen"
+        linkText="Listen"
+      />
+      <PropertyCard
+        title="Books"
+        description="Books about worldview, faith, meaning, and what it looks like to live on purpose. Start with We All Believe."
+        href="/books"
+        linkText="Browse books"
+      />
+    </div>
+  </section>
+
+  <!-- Social Scroll -->
+  <section class="max-w-4xl mx-auto px-6 pb-20">
+    <h2 class="font-heading text-2xl font-medium text-center mb-8">What we're thinking about</h2>
+    <div class="flex justify-center">
+      <a
+        class="twitter-timeline"
+        data-height="500"
+        data-theme="light"
+        data-chrome="noheader nofooter noborders transparent"
+        href="https://twitter.com/human_onpurpose"
+      >
+      </a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section class="border-t border-border">
+    <div class="max-w-3xl mx-auto px-6 py-16 text-center">
+      <h2 class="font-heading text-2xl font-medium mb-4">Stay in the conversation</h2>
+      <p class="text-text-secondary mb-6 max-w-md mx-auto">
+        Subscribe on Substack for weekly essays on meaning, worldview, and living with intention.
+      </p>
+      <a
+        href="https://humanonpurposeproject.substack.com"
+        target="_blank"
+        rel="noopener"
+        class="inline-block bg-accent text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-accent-hover transition-colors"
+      >
+        Subscribe on Substack
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
